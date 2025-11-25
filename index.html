@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Singh</title> 
+    <meta name="description"
+        content="Finance Team Lead @ Matrix Club | Dual-degree student | B.Tech in CSE (AI & ML) @ VIT-Bhopal | B.S. Degree in Data Science and Applications @ IIT-Madras">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* CSS Variables for Easy Theming */
+        :root {
+            --bg-color: #1c2b4a;
+            --primary-glow: #66f71e; /* Neon Orange/Red */
+            --secondary-glow: #faeafa; /* Pale Pink/White */
+            --text-color: #EEE8DC; /* Off-White for Body Text */
+            --link-text-color: #1A0101; /* Dark text on pale link buttons */
+            --header-font: 'Oxanium', monospace;
+            --link-radius: 8px;
+            --spacing-md: 14px;
+            --spacing-lg: 24px;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--header-font);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: var(--spacing-lg) 0;
+            overflow-x: hidden;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 580px;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Header and Image */
+        .profile-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .profile-image-container {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-glow);
+            box-shadow: 0 0 10px var(--primary-glow);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .profile-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-glow);
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap; 
+        }
+        
+        #typed-name {
+            /* Name cursor */
+            border-right: 3px solid var(--primary-glow);
+            text-shadow: 0 0 5px var(--primary-glow); 
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        
+        .profile-description {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            padding: 0 var(--spacing-lg);
+            color: var(--text-color);
+        }
+        
+        #typed-bio {
+            /* Bio cursor */
+            border-right: 2px solid var(--text-color);
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        
+        /* Utility class to remove cursor after typing */
+        .no-cursor {
+            border-right: none !important;
+        }
+
+        /* Link Buttons & Social Icons styles are unchanged */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-align: center;
+            text-decoration: none;
+            background-color: var(--secondary-glow);
+            color: var(--link-text-color);
+            border-radius: var(--link-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s, border 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .link-button:hover {
+            background-color: color-mix(in srgb, var(--secondary-glow) 90%, black);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--primary-glow);
+        }
+
+        .link-button i {
+            margin-right: 10px;
+        }
+
+        .social-icons-container {
+            margin-top: var(--spacing-lg);
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .social-icon {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+
+        .social-icon:hover {
+            color: var(--primary-glow);
+            text-shadow: 0 0 5px var(--primary-glow);
+        }
+
+        /* Keyframes for Cursor Blink (Used for both name and bio) */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-glow); } /* Name cursor color */
+        }
+        
+        /* Specific blink color for bio */
+        #typed-bio {
+             animation: bio-blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes bio-blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--text-color); } /* Bio cursor color */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <header class="profile-header">
+            <div class="profile-image-container">
+                <img class="profile-image"
+                    src="myimg1.jpeg"
+                    alt="Piyush Singh Avatar">
+            </div>
+
+            <h1 class="profile-title">
+                <span id="typed-name"></span>
+            </h1>
+
+            <h2 class="profile-description">
+                <span id="typed-bio"></span>
+            </h2>
+        </header>
+
+        <div class="social-icons-container">
+            <a href="https://www.linkedin.com/in/piyush-kumar-singh-b53749313/" target="_blank" class="social-icon"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com/signature.piyush_" target="_blank" class="social-icon"
+                aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/hacktastic-piyush" target="_blank" class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=917897485505" target="_blank" class="social-icon"
+                aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="links-container">
+            <a href="https://sites.google.com/view/piyushsinghs/home" target="_blank" class="link-button">
+                <i class="fas fa-link"></i> My Personal Website / Portfolio
+            </a>
+            <a href="https://www.linkedin.com/in/piyush-kumar-singh-b53749313/" target="_blank" class="link-button">
+                <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+            </a>
+            <a href="https://github.com/hacktastic-piyush" target="_blank" class="link-button">
+                <i class="fab fa-github"></i> View My Projects on GitHub
+            </a>
+            <a href="https://instagram.com/signature.piyush_" target="_blank" class="link-button">
+                <i class="fab fa-instagram"></i> Follow on Instagram
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=917897485505" target="_blank" class="link-button">
+                <i class="fab fa-whatsapp"></i> Get in Touch (WhatsApp)
+            </a>
+            <a href="https://thematrixclub.netlify.app/about" target="_blank" class="link-button">
+                <i class="fas fa-link"></i> Matrix Club - Finance Team
+            </a>
+        </div>
+
+        <footer style="margin-top: 50px; font-size: 1rem; color: #555;">
+            Built by Piyush Singh
+        </footer>
+    </div>
+
+    <script>
+        const nameText = "Piyush Kumar Singh";
+        const bioText = "Finance Team Lead @ Matrix Club🎓 Dual-degree student | B.Tech in CSE (AI & ML) @ VIT-Bhopal | B.S. Degree in Data Science and Applications @ IIT-Madras 📊";
+        const nameElement = document.getElementById("typed-name");
+        const bioElement = document.getElementById("typed-bio");
+        const nameSpeed = 150; // Slower speed for name
+        const bioSpeed = 50;  // Faster speed for the bio
+        
+        let i = 0;
+        let j = 0;
+
+        function typeName() {
+            if (i < nameText.length) {
+                nameElement.innerHTML += nameText.charAt(i);
+                i++;
+                setTimeout(typeName, nameSpeed);
+            } else {
+                // Name typing is finished
+                nameElement.classList.remove("no-cursor"); // Ensure cursor stays
+                // Start the next typewriter sequence
+                setTimeout(typeBio, 500); // Wait 0.5s before starting the bio
+            }
+        }
+        
+        function typeBio() {
+            if (j < bioText.length) {
+                bioElement.innerHTML += bioText.charAt(j);
+                j++;
+                setTimeout(typeBio, bioSpeed);
+            } else {
+                // Bio typing is finished
+                bioElement.classList.add("no-cursor"); // Remove bio cursor
+            }
+        }
+
+        // Start the name typing effect when the page loads
+        window.onload = typeName;
+    </script>
+</body>
+</html>
